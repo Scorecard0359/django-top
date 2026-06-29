@@ -8,9 +8,13 @@
 <body>
     <h2>Комментарии поста {{ id }}:</h2>
     <ul>
-        <li>эт конечно замечательно, но не мог бы также описать получение всех ачивок?</li>
-        <li>memento mori</li>
-        <li>Пусто здесь...</li>
+    {% autoescape off %}
+    {% for comment in comments %}
+        <li>{{ comment|capfirst|add:" - <a href='#'>Репорт</a> | <a href='#'>Ответ</a>"}}</li>
+    {% empty %}
+        Комментариев нет
+    {% endfor %}
+    {% endautoescape %}
     </ul>
 </body>
 </html>

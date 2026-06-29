@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
 </head>
 <body>
     <!-- Person: {{ person.name }}
@@ -14,15 +16,15 @@
 
     {% comment %}
         erso
-    {% endcomment %} -->
+    {% endcomment %}
 
-    <!-- {% if number > 0 %}
+    {% if number > 0 %}
         <p>Число {{ number }} положительное</p>
     {% else %}
         <p>Число {{ number }} отрицательное</p>
-    {% endif %} -->
+    {% endif %}
 
-    <!-- <ul>
+    <ul>
         {% for num in array %}
             <li>{{ num }}</li>
         {% empty %}
@@ -35,11 +37,35 @@
         <p>Name: {{ name }}</p>
         <p>Age: {{ age }}</p>
     </div>
-    {% endwith %} -->
+    {% endwith %}
 
-    <!-- <p>{% now "Y" %}</p>
+    <p>{% now "Y" %}</p>
     <p>{% now "F j Y" %}</p>
     <p>{% now "N, j, Y" %}</p>
-    <p>{% now "N j, Y, P" %}</p> -->
+    <p>{% now "N j, Y, P" %}</p>
+
+    <h2>{{ message|capfirst|add:" World!" }}</h2>
+
+    <h2>{{ message|capfirst|cut:"le"|add:"lication" }}</h2>
+
+    {% with isEnabled=True %}
+        <h2>{{ isEnabled|default:"test" }}</h2>
+    {% endwith %}
+
+    <h2>{{ value|floatformat:"2g" }}</h2> -->
+
+    {% for _, value in clients.items %}
+        <h1>{{ value|add:" - клиент"|title }}</h1>
+    {% endfor %}
+
+    {% comment %}
+        <h1>{{ name|add:" "|add:surname|add:" - Клиент"|title }}</h1>
+    {% endcomment %}
+
+    <!-- <h2>{{ users|join:", "|title }}</h2>
+
+    <h2>{{ users|slice:":2" }}</h2> -->
+
+    <img src="{% static 'img/wordart.jpg' %}" alt="">
 </body>
 </html>
