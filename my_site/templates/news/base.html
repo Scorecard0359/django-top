@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'st/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/">Главная</a>
+            /
+            <a href="/contact">Контакты</a>
+        </div>
+        <h1>{% block header %}{% endblock header %}</h1>
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>

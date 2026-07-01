@@ -1,0 +1,19 @@
+{% extends "news/base.html" %}
+
+{% block title %}
+    Новости
+{% endblock title %}
+
+{% block header %}
+    Последние события
+{% endblock header %}
+
+{% block content %}
+    <ul>
+        {% for id, post in news.items %}
+            <li>{{ post|capfirst|add:"." }} - <a href="/post/{{ id }}">Читать</a></li>
+        {% empty %}
+            Газеты сожгли, наверное.
+        {% endfor %}
+    </ul>
+{% endblock content %}
