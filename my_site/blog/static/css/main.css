@@ -1,0 +1,25 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+p, ul {
+    width: 600px;
+    margin: 10px auto;
+}
+
+a {
+    color: rgb(74, 123, 125);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(43, 72, 72);
+}
