@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+{% extends "shop/base.html" %}
+
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
-</head>
-<body>
+
+{% block title %}
+    Главная
+{% endblock title %}
+
+{% block header %}
+    <h1>Главная</h1>
+{% endblock header %}
+
+{% block content %}
     <!-- Person: {{ person.name }}
 
     {% autoescape off %}
@@ -67,5 +70,4 @@
     <h2>{{ users|slice:":2" }}</h2> -->
 
     <img src="{% static 'img/wordart.jpg' %}" alt="">
-</body>
-</html>
+{% endblock content %}

@@ -16,13 +16,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="blog/index.html")),
     path('post/', include(blogpatterns)),
+    path('contact/', TemplateView.as_view(template_name="blog/contact.html"))
 ]
 
 # shop
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
-#     path('', views.index),
+#     path('', TemplateView.as_view(template_name="shop/index.html")),
 #     path('about/', TemplateView.as_view(template_name="shop/about.html", extra_context={"header": "Подробная информация"})),
 #     path('contact/', TemplateView.as_view(template_name="shop/contact.html")),
 # ]

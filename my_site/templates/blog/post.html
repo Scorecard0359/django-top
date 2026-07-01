@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+{% extends "blog/base.html" %}
+
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блог - Пост {{ id }}</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-</head>
-<body>
-    <h1>Пост {{ id }}</h1>
+
+{% block title %}
+    Блог - Пост {{ id }}
+{% endblock title %}
+
+{% block header %}
+    Пост {{ id }}
+{% endblock header %}
+
+{% block content %}
     <p>немножечно текст</p>
     <p>на что я потратил все деньги:</p>
     <p><img src="{% static 'img/photo_2025-11-19_21-27-29.jpg' %}" width="500px"></p>
     <p><a href="/post/{{ id }}/comments">Комментарии</a></p>
-</body>
-</html>
+{% endblock content %}
